@@ -66,7 +66,7 @@ services:
         ipv4_address: 172.30.0.8
 
 
-#failed to connect to server [mongo:27017]
+#failed to connect to server [mongo:27017] docker 剛起來的時候 會有一小段時間連不到
 
 
   mongo:

@@ -18,4 +18,18 @@ RUN export MC="-j$(nproc)" \
     && sh "${MORE_EXTENSION_INSTALLER}" \
     && rm -rf /tmp/extensions
 
+
+
+
+# Install Composer
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+
+
+# Download and install NodeJS
+ADD ./extensions/install-node.sh /usr/sbin/install-node.sh
+RUN /usr/sbin/install-node.sh
+
+
+
 WORKDIR /var/www/html
